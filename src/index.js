@@ -1,43 +1,43 @@
 import './style.css';
 import title from './modules/importImages.js';
+import addItem from './modules/addItem.js';
 
 // GET ITEM FROM INPUT AND PUT THEM IN LOCAL STORAGE AND IN OBJECT
 const listEl = document.querySelector('.list-section');
+const inputBtn = document.querySelector('.enter-icon');
+const userInput = document.querySelector('.user-input');
 
-const todo = [
-  {
-    index: 1,
-    description: 'studying array',
-    completed: false,
-  },
-  {
-    index: 2,
-    description: 'making the project',
-    completed: false,
-  },
-  {
-    index: 3,
-    description: 'washing car',
-    completed: false,
-  },
+const todo = JSON.parse(localStorage.getItem('todo')) || [];
 
-];
+todo.forEach((task,index,element) => {
 
-// let todo = JSON.parse(localStorage.getItem("todo")) || []
-
+})
+inputBtn.addEventListener('click', addItem);
+userInput.addEventListener('keyup', (e) => {
+  if (e.keyCode === 13) {
+    addItem();
+  }
+});
 title();
+const resetBtn = document.querySelector('.reload-icon');
+const resetStorage = () => {
+  userInput.value = '';
+  localStorage.clear();
+  listEl.innerHTML = '';
+};
 
+resetBtn.addEventListener('click', resetStorage);
 // GET ITEM AND SHOW ON THE LIST
 
 let listItem = '';
-todo.forEach((element) => {
+todo.forEach((element,index) => {
   const code = `
   <div class="list-item">
     <div>
       <input type="checkbox" id="item-${element.index}">
       <p>${element.description}</p>
     </div>
-      <button class="reset-btn">
+      <button class="reset-btn" id="${index}">
       <svg 
       xmlns="http://www.w3.org/2000/svg" 
       fill="none" 

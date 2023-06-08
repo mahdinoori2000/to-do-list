@@ -5,7 +5,7 @@ const titleSection = document.querySelector('.title-section');
 const title = () => {
   const reloadBtn = `
   <h1>Today's To Do</h1>
-  <img class="reload-icon" src="${reloadImg}" alt="Reload Icon">
+  <button class=reset-btn><img class="reload-icon" src="${reloadImg}" alt="Reload Icon"></button>
   `;
   titleSection.innerHTML = reloadBtn;
 };

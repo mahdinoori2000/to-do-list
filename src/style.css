@@ -61,6 +61,7 @@ body {
   border: none;
   padding: 0 0 0 10px;
   font-size: 20px;
+  margin-top: -11px;
 }
 
 .user-input::placeholder {
@@ -103,4 +104,5 @@ body {
   width: 100%;
   height: 60px;
   background-color: #ebebeb;
+  margin-top: -5px;
 }

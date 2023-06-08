@@ -1,39 +1,36 @@
-import _ from 'lodash';
 import './style.css';
-import {title} from './modules/importImages.js'
+import title from './modules/importImages.js';
 
 // GET ITEM FROM INPUT AND PUT THEM IN LOCAL STORAGE AND IN OBJECT
-const listEl = document.querySelector(".list-section")
+const listEl = document.querySelector('.list-section');
 
 const todo = [
   {
-    index:1,
-    description: "studying array",
+    index: 1,
+    description: 'studying array',
     completed: false,
   },
   {
     index: 2,
-    description: "making the project",
-    completed: false,},
+    description: 'making the project',
+    completed: false,
+  },
   {
     index: 3,
-    description: "washing car",
+    description: 'washing car',
     completed: false,
-  }
+  },
 
-]
+];
 
 // let todo = JSON.parse(localStorage.getItem("todo")) || []
 
-title()
-
+title();
 
 // GET ITEM AND SHOW ON THE LIST
 
-const listData = JSON.parse(localStorage.getItem("todo")) || []
-console.log(listData)
 let listItem = '';
-todo.forEach(element => {
+todo.forEach((element) => {
   const code = `
   <div class="list-item">
     <div>
@@ -53,7 +50,7 @@ todo.forEach(element => {
       </svg>
       </button>
   </div>
-  `
-listItem += code;
+  `;
+  listItem += code;
 });
 listEl.innerHTML = listItem;

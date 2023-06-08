@@ -3,10 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer">
     <title>Wbpack Exercise</title>
 </head>
 <body>
-    <h1>Hello webpack!</h1>
-    <p>this is some text</p>
+    <div class="container">
+        <div class="title-section">
+
+        </div>
+        <div class="input-section">
+            <input class="user-input" type="text" placeholder="Add to your list..." required>
+            <button type="submit" class="addbtn reset-btn">
+                <svg
+                 xmlns="http://www.w3.org/2000/svg" 
+                 fill="none" 
+                 viewBox="0 0 24 24" 
+                 stroke-width="1.5" 
+                 stroke="currentColor" 
+                 class="enter-icon">
+                    <path 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    d="M15 15l-6 6m0 0l-6-6m6 6V9a6 6 0 0112 0v3" />
+                  </svg>
+                  
+            </button>
+        </div>
+        <div class="list-section">
+        </div>
+        <div class="clear-completed-btn"><button class=" reset-btn">Clear all completed</button>
+        </div>
+    </div>  
 </body>
 </html>

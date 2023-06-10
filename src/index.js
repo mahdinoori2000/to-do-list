@@ -1,4 +1,6 @@
 import './style.css';
+// import checkElement from './modules/checkItem.js';
+// import { electron } from 'webpack';
 
 const listEl = document.querySelector('.list-section');
 const inputBtn = document.querySelector('.enter-icon');
@@ -52,9 +54,23 @@ const renderTodoList = () => {
       updateDescription(index, newDescription);
     });
   });
+
+  // check item
+  const checkboxElements = document.querySelectorAll('.check');
+  checkboxElements.forEach((element, index) => element.addEventListener('change', (e) => {
+    if (e.target.checked) {
+      element.nextElementSibling.style.textDecoration = 'line-through';
+      todo[index].completed = true;
+      localStorage.setItem('todo', JSON.stringify(todo));
+    } else {
+      element.nextElementSibling.style.textDecoration = 'none';
+      todo[index].completed = false;
+      localStorage.setItem('todo', JSON.stringify(todo));
+    }
+  }));
 };
 
-// DELETE ITEM FROM LIST
+// delete Item
 const deleteItem = (index) => {
   todo.splice(index, 1);
   todo.forEach((task, newIndex) => {
@@ -101,4 +117,18 @@ const resetStorage = () => {
 const resetBtn = document.querySelector('.reload-icon');
 resetBtn.addEventListener('click', resetStorage);
 
+// clear input field
+
+const clearCompletedBtn = document.querySelector('#clear-completed-btn');
+const trashCompleted = () => {
+  const newTodo = todo.filter((ele) => ele.completed === true);
+  console.log(newTodo);
+  todo = newTodo;
+  localStorage.setItem('todo', JSON.stringify(todo));
+};
+
+clearCompletedBtn.addEventListener('click', () =>{
+  console.log("hello")
+  trashCompleted();
+});
 renderTodoList();

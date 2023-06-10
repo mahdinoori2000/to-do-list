@@ -57,6 +57,9 @@ const renderTodoList = () => {
 // DELETE ITEM FROM LIST
 const deleteItem = (index) => {
   todo.splice(index, 1);
+  todo.forEach((task, newIndex) => {
+    task.index = newIndex + 1;
+  });
   localStorage.setItem('todo', JSON.stringify(todo));
   renderTodoList();
 };

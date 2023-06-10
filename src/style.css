@@ -115,3 +115,6 @@ body {
 .edit-input:focus {
   outline: none;
 }
+.delete-icon:hover {
+  color: red;
+}

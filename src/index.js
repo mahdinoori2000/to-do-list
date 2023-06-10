@@ -1,7 +1,5 @@
 import './style.css';
-// import addItem from './modules/addItem.js';
 
-// GET ITEM FROM INPUT AND PUT THEM IN LOCAL STORAGE AND IN OBJECT
 const listEl = document.querySelector('.list-section');
 const inputBtn = document.querySelector('.enter-icon');
 const userInput = document.querySelector('.user-input');

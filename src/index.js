@@ -121,14 +121,18 @@ resetBtn.addEventListener('click', resetStorage);
 
 const clearCompletedBtn = document.querySelector('#clear-completed-btn');
 const trashCompleted = () => {
-  const newTodo = todo.filter((ele) => ele.completed === true);
-  console.log(newTodo);
-  todo = newTodo;
-  localStorage.setItem('todo', JSON.stringify(todo));
+  const completed = todo.filter((obj) => obj.completed === true);
+  completed.forEach((element) => {
+    todo.splice(element.index - 1, 1);
+    todo.forEach((item, i) => {
+      item.index = i + 1;
+    });
+    localStorage.setItem('todo', JSON.stringify(todo));
+  });
+  renderTodoList();
 };
 
-clearCompletedBtn.addEventListener('click', () =>{
-  console.log("hello")
+clearCompletedBtn.addEventListener('click', () => {
   trashCompleted();
 });
 renderTodoList();

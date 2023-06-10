@@ -9,7 +9,7 @@
 //   }
 // };
 
-const checkElement = () =>{
+const checkElement = () => {
 
 };
 export default checkElement;

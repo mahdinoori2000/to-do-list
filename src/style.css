@@ -112,9 +112,11 @@ body {
   border: none;
   font-size: 18px;
 }
+
 .edit-input:focus {
   outline: none;
 }
+
 .delete-icon:hover {
   color: red;
 }

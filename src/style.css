@@ -107,14 +107,10 @@ body {
   background-color: #ebebeb;
   margin-top: -5px;
 }
-/* .edit-input {
-  display: none;
-} */
-/* .delete-btn {
-  background-color: red;
-} */
+
 .edit-input {
   border: none;
+  font-size: 18px;
 }
 .edit-input:focus {
   outline: none;

@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
+  "homepage": "https://mahdinoori2000.github.io/to-do-list/dist",
   "scripts": {
     "build": "webpack",
     "start": "webpack serve --open",
-    "server": "node server.js"
+    "server": "node server.js",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
@@ -31,6 +33,7 @@
     "webpack-dev-server": "^4.15.0"
   },
   "dependencies": {
+    "gh-pages": "^5.0.0",
     "lodash": "^4.17.21"
   },
   "main": "server.js"

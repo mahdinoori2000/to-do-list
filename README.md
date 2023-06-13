@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <h3><b>Awesome Books Project</b></h3>
+  <h3><b>To-Do List Project</b></h3>
 </div>
 # :green_book: Table of Contents
 
@@ -56,6 +56,11 @@
 
 <!-- LIVE DEMO -->
 
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo Link](https://mahdinoori2000.github.io/to-do-list/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Getting Started <a name="getting-started"></a>
 

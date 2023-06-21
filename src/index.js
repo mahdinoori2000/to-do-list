@@ -1,12 +1,12 @@
 import './style.css';
-// import checkElement from './modules/checkItem.js';
-// import { electron } from 'webpack';
 
 const listEl = document.querySelector('.list-section');
 const inputBtn = document.querySelector('.enter-icon');
 const userInput = document.querySelector('.user-input');
 
 let todo = JSON.parse(localStorage.getItem('todo')) || [];
+
+const updateLocalStorage = () => { localStorage.setItem('todo', JSON.stringify(todo)); };
 
 const renderTodoList = () => {
   let listItem = '';
@@ -61,11 +61,10 @@ const renderTodoList = () => {
     if (e.target.checked) {
       element.nextElementSibling.style.textDecoration = 'line-through';
       todo[index].completed = true;
-      localStorage.setItem('todo', JSON.stringify(todo));
+      updateLocalStorage();
     } else {
       element.nextElementSibling.style.textDecoration = 'none';
       todo[index].completed = false;
-      localStorage.setItem('todo', JSON.stringify(todo));
     }
   }));
 };
@@ -76,13 +75,13 @@ const deleteItem = (index) => {
   todo.forEach((task, newIndex) => {
     task.index = newIndex + 1;
   });
-  localStorage.setItem('todo', JSON.stringify(todo));
+  updateLocalStorage();
   renderTodoList();
 };
 
 const updateDescription = (index, newDescription) => {
   todo[index].description = newDescription;
-  localStorage.setItem('todo', JSON.stringify(todo));
+  updateLocalStorage();
 };
 
 // ADD ITEM
@@ -95,7 +94,7 @@ const addItem = () => {
     };
     todo.push(list);
     userInput.value = '';
-    localStorage.setItem('todo', JSON.stringify(todo));
+    updateLocalStorage();
     renderTodoList();
   }
 };
@@ -118,7 +117,6 @@ const resetBtn = document.querySelector('.reload-icon');
 resetBtn.addEventListener('click', resetStorage);
 
 // clear input field
-
 const clearCompletedBtn = document.querySelector('#clear-completed-btn');
 const trashCompleted = () => {
   const completed = todo.filter((obj) => obj.completed === true);
@@ -127,11 +125,10 @@ const trashCompleted = () => {
     todo.forEach((item, i) => {
       item.index = i + 1;
     });
-    localStorage.setItem('todo', JSON.stringify(todo));
+    updateLocalStorage();
+    renderTodoList();
   });
-  renderTodoList();
 };
-
 clearCompletedBtn.addEventListener('click', () => {
   trashCompleted();
 });
